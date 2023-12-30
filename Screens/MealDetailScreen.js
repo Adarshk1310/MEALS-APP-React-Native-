@@ -40,7 +40,7 @@ function MealDetailScreen({route,navigation}){
         <View>
         <Image style={styles.image} source={{uri:selectedMeal.imageUrl}} />
         <Text style={styles.title}>{selectedMeal.title}</Text>
-       <MealDetails duration={selectedMeal.duration} 
+        <MealDetails duration={selectedMeal.duration} 
                     complexity={selectedMeal.complexity} 
                     affordability={selectedMeal.affordability}
                     textStyle={styles.detailText}/>
@@ -75,7 +75,6 @@ const styles =StyleSheet.create({
     title:{
         fontWeight:'bold',
         fontSize:24,
-        margin:8,
         textAlign:'center',
         color:'white'
 
