@@ -63,10 +63,13 @@ export default MealDetailScreen;
 
 const styles =StyleSheet.create({
     rootContainer:{
-        marginBottom:26
+        marginTop:10,
+        marginBottom:26,
+        marginHorizontal:10
     },
     image:{
         width:'100%',
+        borderRadius:10,
         height:350
     },
     title:{

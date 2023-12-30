@@ -19,13 +19,13 @@ const Drawer = createDrawerNavigator();
 function DrawerNavigator(){
   return (<Drawer.Navigator screenOptions={{
                 
-    headerStyle:{backgroundColor:'#351401'},
+    headerStyle:{backgroundColor:'black'},
     headerTintColor:'white',
-    sceneContainerStyle:{  backgroundColor:"#3f2f25" },
-    drawerContentStyle:{backgroundColor:'#351401'},
+    sceneContainerStyle:{  backgroundColor:"white"},
+    drawerContentStyle:{backgroundColor:'black'},
     drawerInactiveTintColor:'white',
     drawerActiveTintColor:'#351401',
-    drawerActiveBackgroundColor:'#e4baa1'
+    drawerActiveBackgroundColor:'white'
 }} >
     <Drawer.Screen name='Categories' component={CategorySceen} options={{
       title:"All Categories",
@@ -47,9 +47,9 @@ export default function App() {
           <NavigationContainer>
           <Stack.Navigator screenOptions={{
                 
-                headerStyle:{backgroundColor:'#351401'},
+                headerStyle:{backgroundColor:'black'},
                 headerTintColor:'white',
-                contentStyle:{  backgroundColor:"#3f2f25" }
+                contentStyle:{  backgroundColor:"white"}
             }}>
           <Stack.Screen name='Drawer' 
                       component={DrawerNavigator} 
