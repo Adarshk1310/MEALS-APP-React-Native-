@@ -17,10 +17,12 @@ const styles =StyleSheet.create({
     details:{
         flexDirection:'row',
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        // padding:8
     },
     detailItem:{
         marginHorizontal:4,
+        marginBottom:8,
         fontSize:12
     }
 
