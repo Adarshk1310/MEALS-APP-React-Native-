@@ -14,7 +14,6 @@ function MealDetailScreen({route,navigation}){
     const favouriteMealsIds= useSelector((state)=>state.favouriteMeals.ids)
     const dispatch =useDispatch();
     const selectedMeal =MEALS.find((meal)=>meal.id===mealId);
-
     const mealIsFavourite = favouriteMealsIds.includes(mealId);
 
 
@@ -76,19 +75,20 @@ const styles =StyleSheet.create({
     title:{
         fontWeight:'bold',
         fontSize:24,
+        marginVertical:8,
         textAlign:'center',
-        color:'white'
+        color:'black'
 
     },
     detailText:{
-        color:'white'
+        color:'black'
     },
     listContainer:{
-        width:'80%',
+        width:'90%',
 
     },
     listOuterContainer:{
-        alignItems:'center'
+        alignItems:'center',
     }
     
 
