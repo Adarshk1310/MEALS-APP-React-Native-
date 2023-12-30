@@ -36,7 +36,8 @@ function MealDetailScreen({route,navigation}){
 
 
 
-    return <ScrollView style={styles.rootContainer}> 
+    return <ScrollView style={styles.rootContainer}   showsVerticalScrollIndicator={false}>
+                                                    
         <View>
         <Image style={styles.image} source={{uri:selectedMeal.imageUrl}} />
         <Text style={styles.title}>{selectedMeal.title}</Text>

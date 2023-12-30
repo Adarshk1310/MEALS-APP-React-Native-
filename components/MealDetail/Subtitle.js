@@ -23,6 +23,7 @@ const styles =StyleSheet.create({
         marginHorizontal:12,
         borderBottomColor:'#e2b497',
         borderBottomWidth:2,
+        marginBottom:6
     }
 
 });
