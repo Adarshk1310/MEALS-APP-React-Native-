@@ -1,4 +1,4 @@
-import { View,Text,StyleSheet, FlatList } from "react-native";
+import { View,Text,StyleSheet,Image } from "react-native";
 import { CATEGORIES, MEALS } from "../Data/dummy-data";
 import MealItem from "../components/MealItem";
 import { useLayoutEffect } from "react";
@@ -22,9 +22,12 @@ function MealsOverviewScreen({route,navigation}){
     },[catId,navigation])
 
 
-    return <MealsList items={displayedMeals} />
+    return<>
+                
+    
+                <MealsList items={displayedMeals} />
+    </> 
 };
 
 export default MealsOverviewScreen;
-
 

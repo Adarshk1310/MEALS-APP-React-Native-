@@ -1,4 +1,4 @@
-import { Text,View,Image,StyleSheet, ScrollView,Button } from "react-native";
+import { Text,View,Image,StyleSheet, ScrollView } from "react-native";
 import { MEALS } from "../Data/dummy-data";
 import MealDetails from "../components/mealdetails";
 import Subtitle from "../components/MealDetail/Subtitle";
@@ -35,7 +35,8 @@ function MealDetailScreen({route,navigation}){
 
 
 
-    return <ScrollView style={styles.rootContainer}   showsVerticalScrollIndicator={false}>
+    return <>
+                <ScrollView style={styles.rootContainer}   showsVerticalScrollIndicator={false}>
                                                     
         <View>
         <Image style={styles.image} source={{uri:selectedMeal.imageUrl}} />
@@ -54,7 +55,7 @@ function MealDetailScreen({route,navigation}){
         </View>
         </View>
     </View>
-    </ScrollView>
+    </ScrollView></> 
 }
 
 
@@ -68,9 +69,10 @@ const styles =StyleSheet.create({
         marginHorizontal:10
     },
     image:{
-        width:'100%',
+        width:'90%',
+        margin:'5%',
         borderRadius:10,
-        height:350
+        height:300
     },
     title:{
         fontWeight:'bold',
@@ -81,15 +83,17 @@ const styles =StyleSheet.create({
 
     },
     detailText:{
-        color:'black'
+        color:'black',
+        fontWeight:'bold',
+
     },
     listContainer:{
-        width:'90%',
+        width:'95%',
 
     },
     listOuterContainer:{
         alignItems:'center',
-    }
-    
+    },
+ 
 
 })

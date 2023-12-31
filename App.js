@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet,Text} from 'react-native';
+import { ImageBackground, StyleSheet,Image} from 'react-native';
+import {DefaultTheme} from '@react-navigation/native';
 import {NavigationContainer} from '@react-navigation/native';
 import CategorySceen from './Screens/CategoriesScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -8,7 +9,6 @@ import MealDetailScreen from './Screens/MealDetailScreen';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import FavouritesScreen from './Screens/FavouritesScreen';
 import {Ionicons} from '@expo/vector-icons';
-import FavouritesContextProvider from './store/context/favourites-context';
 import { Provider } from 'react-redux';
 import store from './store/redux/store';
 
@@ -21,7 +21,7 @@ function DrawerNavigator(){
                 
     headerStyle:{backgroundColor:'black'},
     headerTintColor:'white',
-    sceneContainerStyle:{  backgroundColor:"white"},
+    sceneContainerStyle:{  backgroundColor:'transparent'},
     drawerContentStyle:{backgroundColor:'black'},
     drawerInactiveTintColor:'white',
     drawerActiveTintColor:'#351401',
@@ -40,24 +40,41 @@ function DrawerNavigator(){
   )
 }
 
+const navTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: 'transparent',
+  },
+};
+
+
 export default function App() {
   return (<>
           <StatusBar style='light'/>
           <Provider store={store}>
-          <NavigationContainer>
+                <ImageBackground   style={styles.backImage} source={{uri:'https://images.unsplash.com/photo-1519750783826-e2420f4d687f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJhY2tncm91bmQlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D'}}>
+
+          <NavigationContainer theme={navTheme} >
+         
           <Stack.Navigator screenOptions={{
                 
                 headerStyle:{backgroundColor:'black'},
                 headerTintColor:'white',
-                contentStyle:{  backgroundColor:"white"}
+                contentStyle:{  backgroundColor:"tranparent"},
+                
+                
             }}>
           <Stack.Screen name='Drawer' 
                       component={DrawerNavigator} 
                       options={{
-                        headerShown:false
+                        headerShown:false,
+                        
                         }}
                         />
-          <Stack.Screen name='MealsOverview' component={MealsOverviewScreen} />
+          <Stack.Screen name='MealsOverview' component={MealsOverviewScreen} options={{
+           
+          }} />
           <Stack.Screen name='MealDetail'
                        component={MealDetailScreen} 
                        options={{
@@ -65,11 +82,30 @@ export default function App() {
                        }}/>
       </Stack.Navigator>
     </NavigationContainer>
+    </ImageBackground>
     </Provider>
     </>
     );
 }
 
-const styles = StyleSheet.create({
- 
-});
+
+
+
+
+const styles =StyleSheet.create({
+  backImage:{
+      width:'100%',
+      height:'100%',
+      position:'absolute',
+      top:0,
+      left:0,
+  },
+  color:{
+      backgroundColor:'rgba(255, 255, 255, 0.27)'
+  }
+})
+
+
+
+
+
